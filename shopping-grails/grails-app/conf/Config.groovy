@@ -89,3 +89,47 @@ log4j = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
+
+grails {
+	mail {
+	  host = "notes.fpi-inc.com"
+	  port = 25
+	  username = "zhijun_xiong@fpi-inc.com"
+	  password = "fpipassword"
+	  props = ["mail.smtp.starttls.enable":"true",
+				   "mail.smtp.port":"25"]
+	}
+ }
+// Added by the Spring Security Core plugin:
+grails.plugin.springsecurity.userLookup.userDomainClassName = 'shopping.grails.User'
+grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'shopping.grails.UserRole'
+grails.plugin.springsecurity.authority.className = 'shopping.grails.Role'
+grails.plugin.springsecurity.securityConfigType = "InterceptUrlMap"
+grails.plugin.springsecurity.interceptUrlMap = [
+	'/':                  	['permitAll'],
+	'/index':             	['permitAll'],
+	'/index.gsp':         	['permitAll'],
+	'/**/js/**':          	['permitAll'],
+	'/**/css/**':         	['permitAll'],
+	'/**/images/**':      	['permitAll'],
+	'/**/favicon.ico':    	['permitAll'],
+	'/login/**':          	['permitAll'],
+	'/logout/**':         	['permitAll'],
+	
+	'/aclClass/**':       	['ROLE_ADMIN'],
+	'/aclEntry/**':         ['ROLE_ADMIN'],
+	'/aclObjectIdentity/**':['ROLE_ADMIN'],
+	'/aclSid/**':		  	['ROLE_ADMIN'],
+	'/persistentLogin/**':	['ROLE_ADMIN'],
+	'/register/**':			['ROLE_ADMIN'],
+	'/registrationCode/**':	['ROLE_ADMIN'],
+	'/requestmap/**':		['ROLE_ADMIN'],
+	'/role/**':				['ROLE_ADMIN'],
+	'/securityInfo/**':		['ROLE_ADMIN'],
+	'/user/**':				['ROLE_ADMIN'],
+	
+	'/shop/**':			    ['permitAll'],
+	'/goods/**':			['permitAll'],
+	'/goodsCategory/**':	['permitAll'],
+	'/**':					['ROLE_ADMIN']
+ ]
