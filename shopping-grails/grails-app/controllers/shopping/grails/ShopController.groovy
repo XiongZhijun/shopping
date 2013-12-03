@@ -6,6 +6,13 @@ import org.springframework.dao.DataIntegrityViolationException
 class ShopController {
 
 	static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
+	static navigation = [
+		group:'tabs',
+		order:10,
+		title:'商店管理',
+		action:'list'
+	]
+
 
 	def index() {
 		redirect(action: "list", params: params)

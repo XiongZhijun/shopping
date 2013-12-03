@@ -63,5 +63,7 @@ grails.project.dependency.resolution = {
 		
 		compile ":spring-security-core:2.0-RC2"
 		compile ":spring-security-ui:1.0-RC1"
+		
+		compile ":navigation:1.3.2"
     }
 }

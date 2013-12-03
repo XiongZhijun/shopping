@@ -15,6 +15,7 @@
 package shopping.grails
 
 import javax.servlet.http.HttpServletResponse
+import grails.plugin.springsecurity.*
 
 class LogoutController {
 
