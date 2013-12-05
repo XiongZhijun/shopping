@@ -32,6 +32,8 @@ grails.project.dependency.resolution = {
         mavenCentral()
 		mavenRepo "http://download.java.net/maven/2/"
 		mavenRepo "http://repo.spring.io/milestone/"
+		
+		mavenRepo "http://repo.desirableobjects.co.uk/"
         // uncomment these (or add new ones) to enable remote dependency resolution from public Maven repositories
         //mavenRepo "http://snapshots.repository.codehaus.org"
         //mavenRepo "http://repository.codehaus.org"
@@ -42,7 +44,7 @@ grails.project.dependency.resolution = {
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
 
-        // runtime 'mysql:mysql-connector-java:5.1.22'
+        runtime 'mysql:mysql-connector-java:5.1.22'
     }
 
     plugins {
@@ -65,5 +67,6 @@ grails.project.dependency.resolution = {
 		compile ":spring-security-ui:1.0-RC1"
 		
 		compile ":navigation:1.3.2"
+		compile ":ajax-uploader:1.1"
     }
 }

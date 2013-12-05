@@ -7,6 +7,9 @@ class GoodsCategory {
 	String name
 	String description
 
+	String toString() {
+		return name;
+	}
 
 	static constraints = {
 		name(blank:false)

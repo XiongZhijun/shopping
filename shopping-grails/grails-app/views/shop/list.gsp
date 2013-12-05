@@ -28,13 +28,13 @@
 					
 						<g:sortableColumn property="code" title="${message(code: 'shop.code.label', default: 'Code')}" />
 					
-						<g:sortableColumn property="password" title="${message(code: 'shop.password.label', default: 'Password')}" />
-					
 						<g:sortableColumn property="email" title="${message(code: 'shop.email.label', default: 'Email')}" />
 					
 						<g:sortableColumn property="mainImage" title="${message(code: 'shop.mainImage.label', default: 'Main Image')}" />
 					
 						<g:sortableColumn property="description" title="${message(code: 'shop.description.label', default: 'Description')}" />
+					
+						<th><g:message code="shop.user.label" default="User" /></th>
 					
 					</tr>
 				</thead>
@@ -46,13 +46,13 @@
 					
 						<td>${fieldValue(bean: shopInstance, field: "code")}</td>
 					
-						<td>${fieldValue(bean: shopInstance, field: "password")}</td>
-					
 						<td>${fieldValue(bean: shopInstance, field: "email")}</td>
 					
 						<td>${fieldValue(bean: shopInstance, field: "mainImage")}</td>
 					
 						<td>${fieldValue(bean: shopInstance, field: "description")}</td>
+					
+						<td>${fieldValue(bean: shopInstance, field: "user")}</td>
 					
 					</tr>
 				</g:each>

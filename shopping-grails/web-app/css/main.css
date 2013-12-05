@@ -594,3 +594,6 @@ a.skip {
 	position: absolute;
 	left: -9999px;
 }
+
+.qq-upload-list {display: none;}
+

@@ -11,6 +11,9 @@ class User {
 	boolean accountLocked
 	boolean passwordExpired
 
+	String toString() {
+		return username
+	}
 	static transients = ['springSecurityService']
 
 	static constraints = {

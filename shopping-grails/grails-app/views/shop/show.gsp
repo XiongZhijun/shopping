@@ -41,15 +41,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${shopInstance?.password}">
-				<li class="fieldcontain">
-					<span id="password-label" class="property-label"><g:message code="shop.password.label" default="Password" /></span>
-					
-						<span class="property-value" aria-labelledby="password-label"><g:fieldValue bean="${shopInstance}" field="password"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${shopInstance?.email}">
 				<li class="fieldcontain">
 					<span id="email-label" class="property-label"><g:message code="shop.email.label" default="Email" /></span>
@@ -73,6 +64,15 @@
 					<span id="description-label" class="property-label"><g:message code="shop.description.label" default="Description" /></span>
 					
 						<span class="property-value" aria-labelledby="description-label"><g:fieldValue bean="${shopInstance}" field="description"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${shopInstance?.user}">
+				<li class="fieldcontain">
+					<span id="user-label" class="property-label"><g:message code="shop.user.label" default="User" /></span>
+					
+						<span class="property-value" aria-labelledby="user-label"><g:link controller="user" action="show" id="${shopInstance?.user?.id}">${shopInstance?.user?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>

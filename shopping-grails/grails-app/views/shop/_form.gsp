@@ -15,15 +15,7 @@
 		<g:message code="shop.code.label" default="Code" />
 		
 	</label>
-	<g:textField name="code" maxlength="10" pattern="${shopInstance.constraints.code.matches}" value="${shopInstance?.code}"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: shopInstance, field: 'password', 'error')} ">
-	<label for="password">
-		<g:message code="shop.password.label" default="Password" />
-		
-	</label>
-	<g:textField name="password" maxlength="24" pattern="${shopInstance.constraints.password.matches}" value="${shopInstance?.password}"/>
+	<g:textField name="code" maxlength="10"  value="${shopInstance?.code}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: shopInstance, field: 'email', 'error')} ">
@@ -47,6 +39,14 @@
 		<g:message code="shop.description.label" default="Description" />
 		
 	</label>
-	<g:textField name="description" value="${shopInstance?.description}"/>
+	<g:textArea name="description" cols="40" rows="5" maxlength="1024" value="${shopInstance?.description}"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: shopInstance, field: 'user', 'error')} required">
+	<label for="user">
+		<g:message code="shop.user.label" default="User" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select id="user" name="user.id" from="${shopping.grails.User.list()}" optionKey="id" required="" value="${shopInstance?.user?.id}" class="many-to-one"/>
 </div>
 
