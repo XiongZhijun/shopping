@@ -9,8 +9,9 @@
 <title><g:message code="default.show.label" args="[entityName]" /></title>
 <style type="text/css">
 table {
-	border-top: 1px solid #DFDFDF;
+	border-top: 0px ;
 	border-collapse: collapse;
+	margin-top:1em;
 	margin-bottom: 1em;
 	width: 0px;
 }
@@ -104,9 +105,7 @@ table {
 					class="property-value" aria-labelledby="description-label"><g:fieldValue
 							bean="${goodsInstance}" field="description" /></span></li>
 			</g:if>
-
-
-		</ol>
+	<li class="fieldcontain">
 		<table>
 			<tr>
 				<g:each in="${1..5 }">
@@ -118,6 +117,10 @@ table {
 
 			</tr>
 		</table>
+		</li>
+
+		</ol>
+	
 		<g:form>
 			<fieldset class="buttons">
 				<g:hiddenField name="id" value="${goodsInstance?.id}" />

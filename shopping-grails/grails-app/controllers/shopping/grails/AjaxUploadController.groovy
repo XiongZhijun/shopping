@@ -14,7 +14,7 @@ import org.codehaus.groovy.grails.web.context.ServletContextHolder
 class AjaxUploadController {
 
 	AjaxUploaderService ajaxUploaderService
-
+	static FILE_PATTERN = /^.*(\.[a-zA-Z]+)$/ 
 	def upload = {
 		try {
 			println params
@@ -23,8 +23,8 @@ class AjaxUploadController {
 			InputStream inputStream = selectInputStream(request)
 
 			ajaxUploaderService.upload(inputStream, uploaded)
-
-			return render(text: [success:true] as JSON, contentType:'text/json')
+			String url = '/'+Config.imageUpload.temporaryDir+"/"+uploaded.name
+			return render(text: [success:true,uri:url] as JSON, contentType:'text/json')
 		} catch (FileUploadException e) {
 
 			log.error("Failed to upload file.", e)
@@ -48,9 +48,12 @@ class AjaxUploadController {
 		if (!dir.exists() && dir.mkdir()) {
 			throw new IllegalArgumentException("create upload file's dir failed. dir is : " + storagePath);
 		}
-
+		def matcher = params['qqfile'] =~ FILE_PATTERN
+		if (!matcher) {
+			throw new IllegalArgumentException("illegal file type. file is " + params['qqfile']);
+		}
 		if (Config.imageUpload?.containsKey('temporaryFile')) {
-			uploaded = new File(storagePath, params['qqfile'])
+			uploaded = new File(storagePath, UUID.randomUUID().toString()+matcher[0][1])
 		} else {
 			uploaded = File.createTempFile('grails', 'ajaxupload')
 		}

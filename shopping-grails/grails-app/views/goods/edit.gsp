@@ -10,6 +10,13 @@
 #au-thumbnailUploader {
 	display: inline-block;
 }
+table {
+	border-top: 0px ;
+	border-collapse: collapse;
+	margin-top:1em;
+	margin-bottom: 1em;
+	width: 0px;
+}
 </style>
 </head>
 <body>

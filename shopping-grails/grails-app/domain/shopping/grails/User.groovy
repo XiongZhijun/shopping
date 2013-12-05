@@ -6,6 +6,7 @@ class User {
 
 	String username
 	String password
+	String email
 	boolean enabled = true
 	boolean accountExpired
 	boolean accountLocked
@@ -19,6 +20,7 @@ class User {
 	static constraints = {
 		username blank: false, unique: true
 		password blank: false
+		email email:true
 	}
 
 	static mapping = {

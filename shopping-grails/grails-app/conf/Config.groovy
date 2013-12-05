@@ -145,6 +145,8 @@ grails.plugin.springsecurity.interceptUrlMap = [
 	'/goods/**':			['permitAll'],
 	'/goodsCategory/**':	['permitAll'],
 	'/ajaxUpload/**':		['permitAll'],
+	'/upload/*.png':		['permitAll'],
+	'/upload/*.jpg':		['permitAll'],
 	'/**':					['ROLE_ADMIN']]
 
 imageUpload {

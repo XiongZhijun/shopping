@@ -53,8 +53,8 @@
 	</label>
 	<uploader:uploader multiple="false" allowedExtensions="['"png"','"jpg"','"jpeg"']" id="thumbnailUploader" url="${[controller:'ajaxUpload',action:'upload'] }" >
 	<uploader:onComplete> 
-		$('#thumbnailImage').attr('src',"${createLink(uri: '/static/upload/')}"+fileName)
-		$('#thumbnail').val("/static/upload/"+fileName)
+		$('#thumbnailImage').attr('src',"${createLink(uri: '/')}"+responseJSON.uri)
+		$('#thumbnail').val(responseJSON.uri)
 	</uploader:onComplete>
 	</uploader:uploader>
 	<g:textField name="thumbnail" value="${goodsInstance?.thumbnail}" style="display:none"/>
@@ -85,8 +85,8 @@
   <g:each in="${ 1..5 }">
   <td><uploader:uploader debug="true" multiple="false" allowedExtensions="['"png"','"jpg"','"jpeg"']" id="imgUploader${it}" url="${[controller:'ajaxUpload',action:'upload'] }" >
 	<uploader:onComplete> 
-		$('#img${it}').attr('src',"${createLink(uri: '/static/upload/')}"+fileName)
-		$('#image${it}').val("/static/upload/"+fileName)
+		$('#img${it}').attr('src',"${createLink(uri: '/')}"+responseJSON.uri)
+		$('#image${it}').val(responseJSON.uri)
 	</uploader:onComplete>
 	</uploader:uploader></td>
   </g:each>
