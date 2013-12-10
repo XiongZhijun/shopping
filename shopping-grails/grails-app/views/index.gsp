@@ -115,5 +115,9 @@
 				</ul>
 			</div>
 		</div>
+		
+		<g:form controller="j_spring_security_logout" method="GET">
+		<g:submitButton name="logout" value="Logout"/>
+		</g:form>
 	</body>
 </html>
