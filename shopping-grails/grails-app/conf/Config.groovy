@@ -117,6 +117,7 @@ grails {
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'shopping.grails.User'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'shopping.grails.UserRole'
 grails.plugin.springsecurity.authority.className = 'shopping.grails.Role'
+grails.plugin.springsecurity.useSecurityEventListener=true
 grails.plugin.springsecurity.securityConfigType = "InterceptUrlMap"
 grails.plugin.springsecurity.interceptUrlMap = [
 	'/':                  	['permitAll'],
