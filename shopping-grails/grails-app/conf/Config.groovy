@@ -135,7 +135,7 @@ grails.plugin.springsecurity.interceptUrlMap = [
 	'/aclObjectIdentity/**':['ROLE_ADMIN'],
 	'/aclSid/**':		  	['ROLE_ADMIN'],
 	'/persistentLogin/**':	['ROLE_ADMIN'],
-	'/register/**':			['ROLE_ADMIN'],
+	'/register/**':			['permitAll'],
 	'/registrationCode/**':	['ROLE_ADMIN'],
 	'/requestmap/**':		['ROLE_ADMIN'],
 	'/role/**':				['ROLE_ADMIN'],
@@ -149,6 +149,19 @@ grails.plugin.springsecurity.interceptUrlMap = [
 	'/upload/*.png':		['permitAll'],
 	'/upload/*.jpg':		['permitAll'],
 	'/**':					['ROLE_ADMIN']]
+
+grails {
+	plugin {
+		springsecurity {
+			security {
+				ui {
+					register.emailFrom = 'zhijun_xiong@fpi-inc.com'
+					forgotPassword.emailFrom = 'zhijun_xiong@fpi-inc.com'
+				}
+			}
+		}
+	}
+}
 
 imageUpload {
 	temporaryFile = '/b'

@@ -26,7 +26,7 @@
 		<link>
 			<name>.link_to_grails_plugins</name>
 			<type>2</type>
-			<locationURI>GRAILS_ROOT/2.2.4/projects/shopping-grails/plugins</locationURI>
+			<location>D:/herod/git/shopping/shopping-grails/target/work/plugins</location>
 		</link>
 	</linkedResources>
 </projectDescription>
